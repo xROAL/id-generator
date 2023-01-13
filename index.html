@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          container: {
+            center: true,
+          },
+        },
+      };
+    </script>
+
+    <script src="/dom.js" type="module"></script>
+
+    <title>ID Generator</title>
+  </head>
+  <body class="bg-slate-900 text-slate-50">
+    <div class="container w-4/5 min-w-min max-w-6xl mt-8 mb-4 px-4">
+      <h1 class="text-xl font-bold">ID Generator</h1>
+      <p class="text-slate-400 text-sm">
+        The generated ID contains valid check digits, however, it is only a
+        specimen.
+      </p>
+    </div>
+
+    <div
+      class="container w-4/5 min-w-min max-w-6xl my-4 p-4 grid grid-cols-12 gap-4 bg-slate-800 border border-slate-700 rounded"
+    >
+      <label class="flex flex-col gap-1 col-span-3">
+        <span class="font-bold">Document type</span>
+        <span class="text-sm text-slate-400">Up to 2 characters</span>
+        <input
+          class="transition p-2 text-slate-200 focus:text-slate-50 bg-slate-700 rounded border border-slate-700 focus:outline focus:outline-slate-500 focus:outline-2 hover:bg-slate-600 focus:bg-slate-600"
+          type="text"
+          id="document-type"
+          value="ID"
+          maxlength="2"
+        />
+      </label>
+      <label class="flex flex-col gap-1 col-span-3">
+        <span class="font-bold">Issued by country</span>
+        <span class="text-sm text-slate-400">Up to 3 characters</span>
+        <input
+          class="transition p-2 text-slate-200 focus:text-slate-50 bg-slate-700 rounded border border-slate-700 focus:outline focus:outline-slate-500 focus:outline-2 hover:bg-slate-600 focus:bg-slate-600"
+          type="text"
+          id="issued-by-country"
+          value="AUT"
+          maxlength="3"
+        />
+      </label>
+      <label class="flex flex-col gap-1 col-span-6">
+        <span class="font-bold">Document code</span>
+        <span class="text-sm text-slate-400"
+          >Letters and numbers, up to 9 characters</span
+        >
+        <input
+          class="transition p-2 text-slate-200 focus:text-slate-50 bg-slate-700 rounded border border-slate-700 focus:outline focus:outline-slate-500 focus:outline-2 hover:bg-slate-600 focus:bg-slate-600"
+          type="text"
+          id="document-code"
+          maxlength="9"
+        />
+      </label>
+      <label class="flex flex-col gap-1 col-span-12">
+        <span class="font-bold">Extra 1</span>
+        <span class="text-sm text-slate-400"
+          >Arbitrary information, up to 15 characters, can be empty</span
+        >
+        <input
+          class="transition p-2 text-slate-200 focus:text-slate-50 bg-slate-700 rounded border border-slate-700 focus:outline focus:outline-slate-500 focus:outline-2 hover:bg-slate-600 focus:bg-slate-600"
+          type="text"
+          id="extra-1"
+          maxlength="15"
+        />
+      </label>
+
+      <label class="flex flex-col gap-1 col-span-4">
+        <span class="font-bold">Date of birth</span>
+        <span class="text-sm text-slate-400">Format YYMMDD</span>
+        <input
+          class="transition p-2 text-slate-200 focus:text-slate-50 bg-slate-700 rounded border border-slate-700 focus:outline focus:outline-slate-500 focus:outline-2 hover:bg-slate-600 focus:bg-slate-600"
+          type="text"
+          id="date-of-birth"
+          maxlength="6"
+        />
+      </label>
+      <label class="flex flex-col gap-1 col-span-4">
+        <span class="font-bold">Gender</span>
+        <span class="text-sm text-slate-400"
+          >M, F, or &lt; for unspecified</span
+        >
+        <input
+          class="transition p-2 text-slate-200 focus:text-slate-50 bg-slate-700 rounded border border-slate-700 focus:outline focus:outline-slate-500 focus:outline-2 hover:bg-slate-600 focus:bg-slate-600"
+          type="text"
+          id="gender"
+          value="&lt;"
+          maxlength="1"
+        />
+      </label>
+      <label class="flex flex-col gap-1 col-span-4">
+        <span class="font-bold">Expiration date</span>
+        <span class="text-sm text-slate-400">Format YYMMDD</span>
+        <input
+          class="transition p-2 text-slate-200 focus:text-slate-50 bg-slate-700 rounded border border-slate-700 focus:outline focus:outline-slate-500 focus:outline-2 hover:bg-slate-600 focus:bg-slate-600"
+          type="text"
+          id="expiration-date"
+          maxlength="6"
+        />
+      </label>
+      <label class="flex flex-col gap-1 col-span-3">
+        <span class="font-bold">Nationality</span>
+        <span class="text-sm text-slate-400">Up to 3 characters</span>
+        <input
+          class="transition p-2 text-slate-200 focus:text-slate-50 bg-slate-700 rounded border border-slate-700 focus:outline focus:outline-slate-500 focus:outline-2 hover:bg-slate-600 focus:bg-slate-600"
+          type="text"
+          id="nationality"
+          value="AUT"
+          maxlength="3"
+        />
+      </label>
+      <label class="flex flex-col gap-1 col-span-9">
+        <span class="font-bold">Extra 2</span>
+        <span class="text-sm text-slate-400"
+          >Arbitrary information, up to 11 characters, can be empty</span
+        >
+        <input
+          class="transition p-2 text-slate-200 focus:text-slate-50 bg-slate-700 rounded border border-slate-700 focus:outline focus:outline-slate-500 focus:outline-2 hover:bg-slate-600 focus:bg-slate-600"
+          type="text"
+          id="extra-2"
+          maxlength="11"
+        />
+      </label>
+
+      <div
+        class="mt-4 text-sm flex flex-row justify-end text-slate-300 col-span-12 gap-2"
+      >
+        <div class="aspect-square h-full rounded bg-sky-600"></div>
+        Selected value
+
+        <div class="aspect-square h-full rounded bg-emerald-500 ml-4"></div>
+        Related check digit
+      </div>
+    </div>
+
+    <div
+      class="w-min mx-auto my-8 py-2 px-4 bg-slate-700 rounded border border-slate-600 text-2xl font-mono tracking-wider"
+    >
+      <div class="flex flex-row">
+        <span
+          class="transition ring-2 rounded bg-transparent ring-transparent"
+          id="res-document-type"
+        ></span>
+        <span
+          class="transition ring-2 rounded bg-transparent ring-transparent"
+          id="res-issued-by-country"
+        ></span>
+        <span
+          class="transition ring-2 rounded bg-transparent ring-transparent"
+          id="res-document-code"
+        ></span>
+        <span
+          class="transition ring-2 rounded bg-transparent ring-transparent"
+          id="res-document-code-check"
+        ></span>
+        <span
+          class="transition ring-2 rounded bg-transparent ring-transparent"
+          id="res-extra-1"
+        ></span>
+      </div>
+      <div class="flex flex-row">
+        <span
+          class="transition ring-2 rounded bg-transparent ring-transparent"
+          id="res-date-of-birth"
+        ></span>
+        <span
+          class="transition ring-2 rounded bg-transparent ring-transparent"
+          id="res-date-of-birth-check"
+        ></span>
+        <span
+          class="transition ring-2 rounded bg-transparent ring-transparent"
+          id="res-gender"
+        ></span>
+        <span
+          class="transition ring-2 rounded bg-transparent ring-transparent"
+          id="res-expiration-date"
+        ></span>
+        <span
+          class="transition ring-2 rounded bg-transparent ring-transparent"
+          id="res-expiration-date-check"
+        ></span>
+        <span
+          class="transition ring-2 rounded bg-transparent ring-transparent"
+          id="res-nationality"
+        ></span>
+        <span
+          class="transition ring-2 rounded bg-transparent ring-transparent"
+          id="res-extra-2"
+        ></span>
+        <span
+          class="underline underline-offset-4 decoration-slate-400 decoration-dashed decoration-1"
+          title="Cumulative check digit"
+          id="res-cumulative-check"
+        ></span>
+      </div>
+      <div class="flex flex-row">
+        <span
+          class="underline underline-offset-4 decoration-slate-400 decoration-dashed decoration-1"
+          title="Surname, firstname(s)"
+          id="res-name"
+        >
+        </span>
+      </div>
+    </div>
+  </body>
+</html>
